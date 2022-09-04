@@ -1,0 +1,19 @@
+#DCA find the stock price in the decreasing order input: 6 7 8 9 1 4 9 13 19 4 5 9 21 34 68 30 40 50 100 5
+#where buy when stock is low and sell when its before low 
+
+st = list(map(int, input().split()))
+buy = st[0]
+sell = 0
+for i in range(0,len(st)-1):
+    if(st[i]>st[i+1]):
+        sell+=st[i]
+        buy+=st[i+1]
+        #print(buy, sell)
+    elif(i+2==len(st)):
+        sell+=st[i+1]
+        #print(buy, sell)
+if(sell>buy):
+    print(sell-buy)
+else:
+    print('0')
+    
