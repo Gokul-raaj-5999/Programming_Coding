@@ -1,3 +1,5 @@
+#find prefix palandrome form a string s palandrme with its length
+
 def zfunction1(string): # time complexity O(m+n)
     n = len(string)
     z = [0]*n
