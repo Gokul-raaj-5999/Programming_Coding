@@ -38,13 +38,9 @@ print(zfunction2(s))
 """
 Z-function and its calculation
 Suppose we are given a string  of length . The Z-function for this string is an array of length  where the -th element is equal to the greatest number of characters starting from the position  that coincide with the first characters of .
-
 In other words,  is the length of the longest string that is, at the same time, a prefix of  and a prefix of the suffix of  starting at .
-
 Note. In this article, to avoid ambiguity, we assume -based indexes; that is: the first character of  has index  and the last one has index .
-
 The first element of Z-function, , is generally not well defined. In this article we will assume it is zero (although it doesn't change anything in the algorithm implementation).
-
 This article presents an algorithm for calculating the Z-function in  time, as well as various of its applications.
 
 Examples
