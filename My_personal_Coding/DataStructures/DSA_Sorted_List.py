@@ -1,3 +1,5 @@
+#used insted of mutiset DS or binary search tree or we can use sorted list
+
 class SortedList(object):
     def __init__(self, iterable=[], _load=200):
         """Initialize sorted list instance."""
