@@ -231,3 +231,6 @@ class SortedList(object):
     def __repr__(self):
         """Return string representation of sorted list."""
         return 'SortedList({0})'.format(list(self))
+
+
+sl = SortedList()
