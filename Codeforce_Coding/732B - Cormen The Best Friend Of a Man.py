@@ -1,22 +1,8 @@
 n, k = map(int, input().split())
 a = list(map(int, input().split()))
 count = 0
-if n%2 == 0:
-    for i in range(0, n-1,1):
+for i in range(0, n-1,1):
         x, y = a[i], a[i+1]
-        if x+y >= k:
-            continue
-        else:
-            remday = k - (x+y)
-            a[i+1] += remday
-            count += remday
-
-        # print(a[i]+ a[i+1])
-else:
-    m = 999999999999
-    for i in range(0, n-1, 1):
-        x, y = a[i], a[i+1]
-        m = min(m, x)
         if x+y >= k:
             continue
         else:
