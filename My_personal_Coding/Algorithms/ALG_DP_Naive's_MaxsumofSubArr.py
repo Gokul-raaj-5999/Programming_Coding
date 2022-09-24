@@ -1,6 +1,6 @@
-# Kadane's Algorithm
+# Naive Approach
 
-# Time Complexity: O(n)
+# Time Complexity: O(n3)
 # Space Complexity: O(1)
 
 #if we have a array of +ve and -ve numbres then the sum of the elements 
@@ -11,29 +11,19 @@
 # 32-bit: the value will be 2^31 – 1, i.e. 2147483647
 # 64-bit: the value will be 2^63 – 1, i.e. 9223372036854775807
 
-
 from sys import maxsize
 
 def maxSubArraySum(a, size):
-	maxsum = 0
-	cursum = 0
-	maxval = -maxsize -1
-	minval = maxsize
+    maxsum = -maxsize - 1
 
-	for x in a:
-		maxval = max(maxval, x)
-		minval = min(minval, x)
-	
-	if maxval <= 0: # will have max as neg val so have to print -ve maxval  in this case.
-		return maxval #u can return minval or int 0 its ur choice
-	
-	for i in range(0, size):  # this loop goes for +ve maxval
-		cursum += a[i]
-		maxsum = max(maxsum, cursum)
-		if cursum < 0:
-			cursum = 0
-		
-	return maxsum	
+    for i in range(0, size):
+        for j in range(0, size):
+            cursum = 0
+            for k in range(i, j+1):
+                cursum += a[k]
+            maxsum = max(maxsum, cursum)
+            
+    return maxsum
 
 a = [-1, 0, -3, 0]
 
