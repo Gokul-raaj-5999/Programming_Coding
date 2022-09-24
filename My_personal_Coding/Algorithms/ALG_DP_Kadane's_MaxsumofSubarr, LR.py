@@ -3,9 +3,6 @@
 # we have to find a sum that is >= totsum that is our aim
 # sumfind(from subarray) >= total_sum.
 
-from tkinter import N
-
-
 maxint = 99999999999
 
 def maxSubArraySum(a, size):
