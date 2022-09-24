@@ -1,29 +1,28 @@
-from sys import maxsize
+#if we have a array of +ve and -ve numbres then the sum of the elements 
+#changes for element to element.. so in that case we have a totsum = X
+# we have to find a sum that is >= totsum that is our aim
+# sumfind(from subarray) >= total_sum.
+
+from tkinter import N
+
+
+maxint = 99999999999
 
 def maxSubArraySum(a, size):
-	max_so_far = -maxsize - 1
-	max_ending_here = 0
-	start = 0
-	end = 0
-	s = 0
+
+	totsum = -maxint - 1
+	subsum = 0
 
 	for i in range(0, size):
+		totsum += a[i]
+		if (subsum < totsum):
+			subsum = totsum
 
-		max_ending_here += a[i]
+		if totsum < 0:
+			totsum = 0
 
-		if max_so_far < max_ending_here:
-			max_so_far = max_ending_here
-			start = s
-			end = i
-
-		if max_ending_here < 0:
-			max_ending_here = 0
-			s = i+1
-
-	print("Maximum contiguous sum is",max_so_far)
-	print("Starting Index ",start)
-	print("Ending Index ",end)
-
+	return subsum
 
 a = [-2, -3, 4, -1, -2, 1, 5, -3]
-maxSubArraySum(a, len(a))
+
+print (f"total sum = {sum(a)}, max sum of subarray = {maxSubArraySum(a, len(a))}" )
