@@ -1,9 +1,22 @@
 #User function Template for python3
 
 class Solution:
-    def sort012(self,arr,n):
+    def sort012(self,a,n):
         # code here
-        arr.sort()
+        while mid <= hi:
+        # If the element is 0
+            if a[mid] == 0:
+                a[lo], a[mid] = a[mid], a[lo]
+                lo = lo + 1
+                mid = mid + 1
+            # If the element is 1
+            elif a[mid] == 1:
+                mid = mid + 1
+            # If the element is 2
+            else:
+                a[mid], a[hi] = a[hi], a[mid]
+                hi = hi - 1
+            return a
             
         
 #{ 
