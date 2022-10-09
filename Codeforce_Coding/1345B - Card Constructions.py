@@ -37,15 +37,10 @@ def solve():
         else:
             i -= 1
         
-        
-
     # print(count)
     # print()
     return count
     
-
-
-
 for t in range(0, int(input())):
     print(solve())
 
