@@ -88,6 +88,14 @@ def rootinsert(temp, key):
             break
         else:
             q.append(temp.right)
+    
+def getLeafCount(node):
+    if node is None:
+        return 0 
+    if(node.left is None and node.right is None):
+        return 1 
+    else:
+        return getLeafCount(node.left) + getLeafCount(node.right)
 
         
 
@@ -117,5 +125,7 @@ if __name__ == '__main__':
 
     print()
     print2Dshape(root, 0)
+
+    print(getLeafCount(root))
 
     
