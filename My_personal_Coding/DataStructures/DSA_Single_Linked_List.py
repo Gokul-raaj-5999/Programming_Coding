@@ -79,6 +79,16 @@ class single_linked_list:
         print(temp.value)    #printing the last value which has null   
         return           
 
+    def reverse(self):
+        prev = None
+        current = self.head
+        while current is not None:
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        self.head = prev
+        return self.print()
 
 
 sl = single_linked_list() #main code
@@ -102,3 +112,5 @@ while(1):
         sl.insert(loc, data)
     elif ip[0] == 'break':
         break
+    elif ip[0] == 'rev':
+        sl.reverse()
