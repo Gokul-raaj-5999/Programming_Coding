@@ -29,7 +29,7 @@ def dfs(root, depth): # max depth of BT for both left and right.
     if not root:
         return depth
     return max( dfs(root.left, depth+1), dfs(root.right, depth+1))
-    
+
 def levelordercall(root):
     def levelorder(root):
         h = treehight(root)
@@ -144,6 +144,7 @@ if __name__ == '__main__':
     levelordercall(root)
 
     print( dfs(root, 0)) 
+    
     print( symentric(root))
 
     print()
