@@ -29,31 +29,33 @@ def dfs(root, depth): # max depth of BT for both left and right.
     if not root:
         return depth
     return max( dfs(root.left, depth+1), dfs(root.right, depth+1))
+    
+def levelordercall(root):
+    def levelorder(root):
+        h = treehight(root)
+        for i in range(0, h+1):
+            currentlevel(root, i)
 
-def levelorder(root):
-    h = treehight(root)
-    for i in range(0, h+1):
-        currentlevel(root, i)
+    def currentlevel(root, level):
+        if not root:
+            return
+        if level == 1:
+            print(root.val, end= ' ')
+        elif level > 1:
+            currentlevel(root.left, level-1)
+            currentlevel(root.right, level-1)
 
-def currentlevel(root, level):
-    if not root:
-        return
-    if level == 1:
-        print(root.val, end= ' ')
-    elif level > 1:
-        currentlevel(root.left, level-1)
-        currentlevel(root.right, level-1)
-
-def treehight(node):
-    if not node:
-        return 0
-    else:
-        lhight = treehight(node.left)
-        rhight = treehight(node.right)
-        if lhight > rhight:
-            return lhight +1
+    def treehight(node):
+        if not node:
+            return 0
         else:
-            return rhight +1
+            lhight = treehight(node.left)
+            rhight = treehight(node.right)
+            if lhight > rhight:
+                return lhight +1
+            else:
+                return rhight +1
+    return levelorder(root)
 
 def inorder(root): #left -> node -> right.
     if root:
@@ -138,7 +140,8 @@ if __name__ == '__main__':
     rootinsert(root, 10)
     rootinsert(root, 11)
     rootinsert(root, 12)
-    levelorder(root)
+
+    levelordercall(root)
 
     print( dfs(root, 0)) 
     print( symentric(root))
