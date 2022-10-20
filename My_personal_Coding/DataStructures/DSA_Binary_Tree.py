@@ -23,6 +23,7 @@ def symentric(root): #to check weather BT is symentric or not True/False
         if l.val == r.val:
             return dfs(l.left, r.right) and dfs(l.right, r.left)
         return False     
+        
     return dfs(root.left, root.right)   
 
 def dfs(root, depth): # max depth of BT for both left and right.
@@ -144,7 +145,7 @@ if __name__ == '__main__':
     levelordercall(root)
 
     print( dfs(root, 0)) 
-    
+
     print( symentric(root))
 
     print()
