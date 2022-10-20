@@ -13,6 +13,11 @@ spacecount = [2] #space count 3 will be okay for print bTree in 2d space.
 # print binary tree have 3 methods inorder, preorder, postorder traversal.
 
 
+def dfs(root, depth): # max depth of BT for both left and right.
+    if not root:
+        return depth
+    return max( dfs(root.left, depth+1), dfs(root.right, depth+1))
+
 def levelorder(root):
     h = treehight(root)
     for i in range(0, h+1):
@@ -122,6 +127,8 @@ if __name__ == '__main__':
     rootinsert(root, 11)
     rootinsert(root, 12)
     levelorder(root)
+
+    print( dfs(root, 0)) 
 
     print()
     print2Dshape(root, 0)
