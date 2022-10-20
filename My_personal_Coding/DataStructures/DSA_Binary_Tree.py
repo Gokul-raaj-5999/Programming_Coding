@@ -12,6 +12,18 @@ class Node:
 spacecount = [2] #space count 3 will be okay for print bTree in 2d space.
 # print binary tree have 3 methods inorder, preorder, postorder traversal.
 
+def symentric(root): #to check weather BT is symentric or not True/False
+    if not root:
+        return True
+    def dfs(l, r):
+        if not l and not r:
+            return True
+        if not l or not r:
+            return False
+        if l.val == r.val:
+            return dfs(l.left, r.right) and dfs(l.right, r.left)
+        return False     
+    return dfs(root.left, root.right)   
 
 def dfs(root, depth): # max depth of BT for both left and right.
     if not root:
@@ -129,6 +141,7 @@ if __name__ == '__main__':
     levelorder(root)
 
     print( dfs(root, 0)) 
+    print( symentric(root))
 
     print()
     print2Dshape(root, 0)
