@@ -58,6 +58,25 @@ def levelordercall(root):
                 return rhight +1
     return levelorder(root)
 
+def levelOrder(root):  #node -> left -> right.
+    result = []
+    if root is None:
+        return result
+    buf = [root]
+    while len(buf):
+        nodes = []
+        lavel = []
+        while len(buf):
+            cur = buf.pop(0)
+            lavel.append(cur.val)
+            if (cur.left):
+                nodes.append(cur.left)
+            if (cur.right):
+                nodes.append(cur.right)
+        result.append(lavel)
+        buf = nodes
+    return result
+
 def inorder(root): #left -> node -> right.
     if root:
         inorder(root.left)
@@ -136,6 +155,11 @@ if __name__ == '__main__':
 
     print('printing postorder traversal')
     postorder(root)
+    print()
+
+    print('printing levelorder traversal')
+    inix = levelOrder(root)
+    print(inix)
     print()
 
     rootinsert(root, 10)
