@@ -1,6 +1,6 @@
 """
 notes:
-breath first traversal/ BFS = level order 
+breath first traversal/ BFS = levelorder 
 depth first traversal/ DFS = preorder, inorder, postoredr.
 """
 class Node:
