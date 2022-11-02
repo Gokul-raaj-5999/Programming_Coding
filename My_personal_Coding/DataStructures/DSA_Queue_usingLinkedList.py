@@ -31,7 +31,7 @@ class Queue():
             print('empty')
             return
         tem = self.head
-        print('printint-> ', end= ' ')
+        print('printing-> ', end= ' ')
         while tem.next:
             print(tem.data , end= ' ')
             tem = tem.next
