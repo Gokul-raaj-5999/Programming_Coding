@@ -1,4 +1,17 @@
 class Solution:
+    def maxProfit(self, arr: List[int]) -> int:
+        profit = 0
+        minprice = float('inf')
+        for i in range(0, len(arr)):
+            if arr[i] < minprice:
+                minprice = arr[i]
+            elif arr[i] - minprice > profit:
+                profit = arr[i] - minprice
+        return profit
+    
+    
+#-------------------another solution------------------
+class Solution:
     def maxProfit(self,prices):
         left = 0 #Buy
         right = 1 #Sell
