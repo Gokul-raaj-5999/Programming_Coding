@@ -1,6 +1,6 @@
 #boubble sort with time complexity O(n*(n-1)) and O(n*)
 
-a = list(map(int, input().split()))
+a = [9,8,7,6,5,4,3,6641,4,49,64,45,4,646,6,26,62,4,6,46,4227,645,67,64,64,64,67,64,67,64,2,1]
 aa = a.copy()
 n = len(a)
 change = len(a)
