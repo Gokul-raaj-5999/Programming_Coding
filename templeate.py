@@ -6,7 +6,7 @@ def func():
 
 def solve():
 
-    # return 
+    return 
      
 
 for t in range(0, int(input())):
