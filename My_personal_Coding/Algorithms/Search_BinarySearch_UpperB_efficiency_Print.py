@@ -3,10 +3,25 @@
 
 import math
 
-def bsec(a , x):
+def search(a, x): # gives its index
+    s = 0
+    e = len(a)
+    if x > a[-1] or x < a[0]:
+        return -1
+    while s <= e:
+        mid = (s+e)//2
+        if a[mid] == x:
+            return mid
+        elif a[mid] > x:
+            e = mid -1
+        elif a[mid] < x:
+            s = mid +1
+    return -1
+
+
+def bsec(a , x):   # gives position 
     start = 0
     end = len(a)
-    
     count = 1
     while start < end:
         mid = (start + end)//2  #binary search in upper bound on mid 
