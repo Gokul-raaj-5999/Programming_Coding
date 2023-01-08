@@ -12,29 +12,33 @@
 # 64-bit: the value will be 2^63 – 1, i.e. 9223372036854775807
 
 
-from sys import maxsize
+#best case - O(n)
+arr = [-1,2,4,-3,5,2,-5,2]
+n = len(arr)
+best = 0
+sum = 0
+for a in range(0, n):
+	sum = max(arr[a], sum+arr[a])
+	best = max(best, sum)
+print(best)
 
-def maxSubArraySum(a, size):
-	maxsum = 0
-	cursum = 0
-	maxval = -maxsize -1
-	minval = maxsize
 
-	for x in a:
-		maxval = max(maxval, x)
-		minval = min(minval, x)
-	
-	if maxval <= 0: # will have max as neg val so have to print -ve maxval  in this case.
-		return maxval #u can return minval or int 0 its ur choice
-	
-	for i in range(0, size):  # this loop goes for +ve maxval
-		cursum += a[i]
-		maxsum = max(maxsum, cursum)
-		if cursum < 0:
-			cursum = 0
-		
-	return maxsum	
+## average case - O(n^2)
+# best = 0
+# for a in range(0, n):
+# 	sum = 0
+# 	for b in range(a, n):
+# 		sum += arr[b]
+# 		best = max(best, sum)
+# print(best)
 
-a = [-1, 0, -3, 0]
+## worst case - O(n^3)
+# best = 0
+# for a in range(0, n):
+#     for b in range(a, n):
+#         sum = 0
+#         for k in range(a, b+1):
+#             sum += arr[k]
+#         best = max(best, sum)
+# print(best)
 
-print (f"total sum = {sum(a)}, max sum of subarray = {maxSubArraySum(a, len(a))}" )
