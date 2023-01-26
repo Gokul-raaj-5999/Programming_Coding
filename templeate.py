@@ -12,7 +12,7 @@ def solve():
 
     return 0
      
-
+#----------------------code---------------------------#
 for t in range(0, int(input())):
     print(solve()) #single varialbe return 
     # solve() 
